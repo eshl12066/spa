@@ -7,6 +7,7 @@ import AppMain from '@/components/AppMain'
 import Articles from '@/views/sys/Articles'
 import VuexPage1 from '@/views/sys/VuexPage1'
 import VuexPage2 from '@/views/sys/VuexPage2'
+import Mzlr from '@/views/sys/wt/Mzlr'
 
 Vue.use(Router)
 
@@ -45,7 +46,12 @@ export default new Router({
 				path: '/sys/VuexPage2',
 				name: 'VuexPage2',
 				component: VuexPage2
-			}
+			},
+      {
+        path: '/sys/wt/mzlr',
+        name: 'Mzlr',
+        component: Mzlr
+      }
 		]
 	}]
 })
