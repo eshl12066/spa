@@ -5,6 +5,7 @@
 export default {
 	'SERVER': 'http://localhost:8080/yl', //服务器
 	'SYSTEM_USER_DOLOGIN': '/ylUser/login', //用户登陆
+  'VERIFICATION': '/ylUser/verificationCode', //用户登陆
 	'SYSTEM_USER_DOREG': '/userAction_reg.action', //用户注册
 	'SYSTEM_MENU_TREE': '/treeNodeAction.action', //左侧树形菜单加载
 	'SYSTEM_ARTICLE_LIST': '/articleAction_list.action', //文章列表

@@ -5,6 +5,10 @@ export default {
 		state.resturantName = payload.resturantName;
 	},
 
+  setVerificationJwt: (state, payload) => {
+    state.verificationJwt = payload.verificationJwt;
+  },
+
 	setJwt: (state, payload) => {
 		state.jwt= payload.jwt;
 	},
