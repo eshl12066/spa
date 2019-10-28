@@ -13,5 +13,8 @@ export default {
 	},
 	getRole:(state) =>{
 		return state.role;
-	}
+	},
+  getVerificationJwt:(state) =>{
+    return state.verificationJwt;
+  },
 }

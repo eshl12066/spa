@@ -20,6 +20,42 @@ axios.defaults.transformRequest = function(data) {
 	return data;
 };
 
+// 请求拦截器
+axios.interceptors.request.use(function(config) {
+  //设置验证码jwt令牌
+  let verificationJwt = window.vm.$store.getters.getVerificationJwt;
+  if (verificationJwt) {
+    config.headers['verificationJwt'] = verificationJwt;
+  }
+
+  var jwt = window.vm.$store.getters.getJwt;
+  config.headers['jwt'] = jwt;
+  return config;
+}, function(error) {
+  return Promise.reject(error);
+});
+
+// 响应拦截器
+axios.interceptors.response.use(function(response) {
+  // debugger;
+  //保存验证码jwt令牌
+  let verificationjwt = response.headers['verificationjwt'];
+  if (verificationjwt) {
+    window.vm.$store.commit('setVerificationJwt', {
+      verificationJwt: verificationjwt
+    });
+  }
+
+  var jwt = response.headers['jwt'];
+  if (jwt) {
+    window.vm.$store.commit('setJwt', {
+      jwt: jwt
+    });
+  }
+  return response;
+}, function(error) {
+  return Promise.reject(error);
+});
 
 // // 请求拦截器
 // axios.interceptors.request.use(function(config) {
