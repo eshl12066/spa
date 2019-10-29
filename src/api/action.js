@@ -16,6 +16,8 @@ export default {
 
   'SYSTEM_MZ_LR': '/ylGh/insert',   //门诊录入  吴腾
 
+  'SYSTEM_MZ_CX': '/ylGh/getall',
+
   'getFullPath': k => { //获得请求的完整地址，用于mockjs测试时使用
   return this.SERVER + this[k];
 }

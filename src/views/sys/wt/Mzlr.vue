@@ -76,36 +76,25 @@
             onSubmit() {
                 this.$refs['form'].validate((valid) => {
                     if (valid) {
-                        var url = null;
-                        if (null == this.form.userNo) {
-                            url = this.axios.urls.SYSTEM_MZ_LR;
-                        }
-                        console.log(url);
-                        this.axios.post(url, this.form).then(response => {
-                            if (response.data.code == 0) {
+                        let url = this.axios.urls.SYSTEM_MZ_LR;
+                        this.axios.post(url, this.form).then(resp => {
+                            console.log("123");
+                            console.log(resp);
+                            if (resp.data.code == 0) {
                                 this.$message({
-                                    message: response.data.msg,
+                                    message: resp.data.msg,
                                     type: 'warning'
                                 });
                             } else {
-                                if (null == this.form.id) {
-                                    this.doClearForm();
-                                    this.articleDialogFormVisible=false;
-                                    this.search();
-                                }else{
-                                    this.doClearForm();
-                                    this.articleDialogFormVisible=false;
-                                    this.search();
-                                }
                                 // this.search();
-                                this.$message({
-                                    message: response.data.msg,
+                                 this.doClearForm();
+                                 this.$message({
+                                    message: resp.data.msg,
                                     type: 'success'
                                 });
                             }
-
                         }).catch(function(error) {
-                            console.log(error);
+                            console.log("操作失败");
                         });
                     } else {
                         console.log('error submit!!');
@@ -113,6 +102,12 @@
                     }
                 });
 
+            },
+            doClearForm:function () {
+                this.form.Pname = null;
+                this.form.Page = null;
+                this.form.Psex = null;
+                this.form.Rcost = null;
             }
         }
     }

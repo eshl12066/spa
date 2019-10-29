@@ -8,6 +8,8 @@ import Articles from '@/views/sys/Articles'
 import VuexPage1 from '@/views/sys/VuexPage1'
 import VuexPage2 from '@/views/sys/VuexPage2'
 import Mzlr from '@/views/sys/wt/Mzlr'
+import Mzcx from '@/views/sys/wt/Mzcx'
+
 
 Vue.use(Router)
 
@@ -51,6 +53,11 @@ export default new Router({
         path: '/sys/wt/mzlr',
         name: 'Mzlr',
         component: Mzlr
+      },
+      {
+        path: '/sys/wt/Mzcx',
+        name: 'Mzcx',
+        component: Mzcx
       }
 		]
 	}]
