@@ -17,7 +17,9 @@ export default {
   'SYSTEM_MZ_LR': '/ylGh/insert',   //门诊录入  吴腾
 
   'SYSTEM_MZ_CX': '/ylGh/getall',
-
+/////////////////////////////////////////LCL//////////////////////////////////////////////////////////////////
+  'SYSTEM_YLZYBR_ADD': '/ylZybr/addYlZybr',//增加
+  'SYSTEM_YLZYBR_EDIT': '/ylZybr/editYlZybr',//修改
   'getFullPath': k => { //获得请求的完整地址，用于mockjs测试时使用
   return this.SERVER + this[k];
 }

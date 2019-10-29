@@ -123,8 +123,7 @@
                       if (valid) {
                           // alert('submit!');
                           let url = this.axios.urls.SYSTEM_YLZYBR_ADD;
-                          this.axios.post(url, this.
-                          ).then((response) => {
+                          this.axios.post(url, this.ruleForm).then((response) => {
                               console.log(response);
                               this.ruleForm();
                           }).catch(function(error) {
