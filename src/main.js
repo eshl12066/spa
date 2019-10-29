@@ -9,6 +9,7 @@ import store from './store'
 import ElementUI from 'element-ui'
 import axios from '@/api/http'
 import VueAxios from 'vue-axios'
+// import Axios from "axios";
 
 Vue.use(ElementUI)
 Vue.use(VueAxios,axios)
